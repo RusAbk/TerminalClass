@@ -31,6 +31,12 @@ public:
     printf("\033[0%dm", style);
   }
 
+  static void setStyle(int * styles){
+    for(int el : styles){
+      printf("\033[0%dm", el);
+    }
+  }
+
   static void reset() {
     printf("\033[00m");
   }
