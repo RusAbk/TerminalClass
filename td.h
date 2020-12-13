@@ -2,6 +2,7 @@
 #define TD_H
 
 #include <stdio.h>
+#include <vector>
 
 class TD
 {
@@ -31,7 +32,7 @@ public:
     printf("\033[0%dm", style);
   }
 
-  static void setStyle(int * styles){
+  static void setStyle(std::vector<int> styles){
     for(int el : styles){
       printf("\033[0%dm", el);
     }
