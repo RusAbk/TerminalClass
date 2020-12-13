@@ -35,11 +35,13 @@ public:
     printf("\033[00m");
   }
   static void goHome(){
-    //Move cursor to the indicated row, column (origin at 1,1)
     printf("\033[H");
   }
   static void clrscr(){
     printf("\033[2J");
+  }
+  static void gotoxy(int x, int y){
+    printf("\033[%d;%dH", y, x);
   }
 };
 
