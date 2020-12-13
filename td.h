@@ -19,8 +19,8 @@ public:
   // STYLES
   static const int bright = 1;
   static const int italic = 3;
-  static const int underline = 4;
-  static const int reverse = 7;
+  static const int underlined = 4;
+  static const int reversed = 7;
   static const int invisible = 8;
 
   static void setColors(int font, int bg){
