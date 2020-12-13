@@ -50,6 +50,13 @@ public:
   static void gotoxy(int x, int y){
     printf("\033[%d;%dH", y, x);
   }
+
+  static void setEcho(bool status){
+    system(status ? "stty echo" : "stty -echo");
+  }
+  static void setNeedEnter(bool status){
+    system(status ? "stty -cbreak" : "stty cbreak");
+  }
 };
 
 #endif // TD_H
