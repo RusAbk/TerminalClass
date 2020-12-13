@@ -16,24 +16,30 @@ public:
   static const int cyan = 6;
   static const int white = 7;
 
-  static void reset() {
-    printf("\033[00m");
-  }
-  static void setBright() {
-    printf("\033[01m");
-  }
-  static void setUnderline() {
-    printf("\033[01m");
-  }
-  static void setReverse() {
-    printf("\033[07m");
-  }
-  static void setInvisible() {
-    printf("\033[08m");
-  }
+  // STYLES
+  static const int bright = 1;
+  static const int italic = 3;
+  static const int underline = 4;
+  static const int reverse = 7;
+  static const int invisible = 8;
 
   static void setColors(int font, int bg){
     printf("\033[3%d;4%dm", font, bg);
+  }
+
+  static void setStyle(int style){
+    printf("\033[0%dm", style);
+  }
+
+  static void reset() {
+    printf("\033[00m");
+  }
+  static void goHome(){
+    //Move cursor to the indicated row, column (origin at 1,1)
+    printf("\033[H");
+  }
+  static void clrscr(){
+    printf("\033[2J");
   }
 };
 
